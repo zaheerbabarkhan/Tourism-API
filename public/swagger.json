@@ -1,0 +1,653 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"SaveUpdateResBUS": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"BussName": {
+						"type": "string"
+					},
+					"BussSeats": {
+						"type": "number",
+						"format": "double"
+					},
+					"BussBookingDates": {
+						"properties": {
+							"endingDate": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"startingDate": {
+								"type": "string",
+								"format": "date-time"
+							}
+						},
+						"required": [
+							"endingDate",
+							"startingDate"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"id",
+					"BussName",
+					"BussSeats",
+					"BussBookingDates"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqBus": {
+				"properties": {
+					"BussName": {
+						"type": "string"
+					},
+					"BussSeats": {
+						"type": "number",
+						"format": "double"
+					},
+					"BussBookingDates": {
+						"properties": {
+							"endingDate": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"startingDate": {
+								"type": "string",
+								"format": "date-time"
+							}
+						},
+						"required": [
+							"endingDate",
+							"startingDate"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"BussName",
+					"BussSeats",
+					"BussBookingDates"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetReqBus": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqBus": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"BussName": {
+						"type": "string"
+					},
+					"BussSeats": {
+						"type": "number",
+						"format": "double"
+					},
+					"BussBookingDates": {
+						"properties": {
+							"endingDate": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"startingDate": {
+								"type": "string",
+								"format": "date-time"
+							}
+						},
+						"required": [
+							"endingDate",
+							"startingDate"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"_id",
+					"BussName",
+					"BussSeats",
+					"BussBookingDates"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"_LeanDocument__LeanDocument_T__": {
+				"properties": {},
+				"type": "object"
+			},
+			"Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__": {
+				"properties": {
+					"_id": {
+						"$ref": "#/components/schemas/_LeanDocument__LeanDocument_T__",
+						"description": "This documents _id."
+					},
+					"__v": {
+						"description": "This documents __v."
+					},
+					"id": {
+						"description": "The string version of this documents _id."
+					}
+				},
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_": {
+				"$ref": "#/components/schemas/Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__",
+				"description": "Construct a type with the properties of T except for those in type K."
+			},
+			"LeanDocument_this_": {
+				"$ref": "#/components/schemas/Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_"
+			},
+			"BUS": {
+				"$ref": "#/components/schemas/LeanDocument_this_"
+			},
+			"DeleteReqBus": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateSaveResTrip": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"TripName": {
+						"type": "string"
+					},
+					"TripDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"TripBuses": {
+						"items": {
+							"$ref": "#/components/schemas/BUS"
+						},
+						"type": "array"
+					},
+					"Seats": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"TripName",
+					"TripDate",
+					"TripBuses",
+					"Seats"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqTrip": {
+				"properties": {
+					"TripName": {
+						"type": "string"
+					},
+					"TripDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"TripBuses": {
+						"items": {
+							"$ref": "#/components/schemas/BUS"
+						},
+						"type": "array"
+					},
+					"Seats": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"TripName",
+					"TripDate",
+					"TripBuses",
+					"Seats"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetReqTrip": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqTrip": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"TripName": {
+						"type": "string"
+					},
+					"TripDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"TripBuses": {
+						"items": {
+							"$ref": "#/components/schemas/BUS"
+						},
+						"type": "array"
+					},
+					"Seats": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"TripName",
+					"TripDate",
+					"TripBuses",
+					"Seats"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"TRIP": {
+				"$ref": "#/components/schemas/LeanDocument_this_"
+			},
+			"DeleteReqTrip": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "Bus_Ticket_System",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/Bus/saveBus": {
+			"post": {
+				"operationId": "SaveBus",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResBUS"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Bus"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqBus"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Bus/getBus": {
+			"post": {
+				"operationId": "GetBus",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResBUS"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Bus"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/GetReqBus"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Bus/updateBus": {
+			"put": {
+				"operationId": "UpdateBus",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResBUS"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Bus"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqBus"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Bus/deleteBus": {
+			"delete": {
+				"operationId": "DeleteBus",
+				"responses": {
+					"200": {
+						"description": "Admin Deleted",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/BUS"
+										},
+										{
+											"properties": {
+												"_id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"_id"
+											],
+											"type": "object"
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Bus"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DeleteReqBus"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Bus/getBusList": {
+			"post": {
+				"operationId": "GetBusList",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/SaveUpdateResBUS"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Bus"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/Trip/saveTrip": {
+			"post": {
+				"operationId": "SaveTrip",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UpdateSaveResTrip"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Trip"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqTrip"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Trip/getTrip": {
+			"post": {
+				"operationId": "GetTrip",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UpdateSaveResTrip"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Trip"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/GetReqTrip"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Trip/updateTrip": {
+			"put": {
+				"operationId": "UpdateTrip",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UpdateSaveResTrip"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Trip"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqTrip"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Trip/deleteTrip": {
+			"delete": {
+				"operationId": "DeleteTrip",
+				"responses": {
+					"200": {
+						"description": "Admin Deleted",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/TRIP"
+										},
+										{
+											"properties": {
+												"_id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"_id"
+											],
+											"type": "object"
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Trip"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DeleteReqTrip"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Trip/getTripList": {
+			"post": {
+				"operationId": "GetTripList",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/UpdateSaveResTrip"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Trip"
+				],
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
